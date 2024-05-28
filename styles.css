@@ -29,28 +29,20 @@ h1 {
     margin-top: 2px; /* Agrega margen superior al contenedor del botón */
 }
 @keyframes colorChange {
-    0% { background-color: #ff6666; }
-    25% { background-color: #ffcc66; }
-    50% { background-color: #66ff66; }
-    75% { background-color: #66ccff; }
-    100% { background-color: #ff66cc; }
+    0% { background-color: cyan; }
+    50% { background-color: blueviolet; }
+    100% { background-color: cyan; }
 }
 
 @keyframes borderGlow {
     0% {
-        box-shadow: 0 0 5px #ff6666, 0 0 10px #ff6666, 0 0 20px #ff6666;
-    }
-    25% {
-        box-shadow: 0 0 5px #ffcc66, 0 0 10px #ffcc66, 0 0 20px #ffcc66;
+        box-shadow: 0 0 5px cyan, 0 0 10px cyan, 0 0 20px cyan;
     }
     50% {
-        box-shadow: 0 0 5px #66ff66, 0 0 10px #66ff66, 0 0 20px #66ff66;
-    }
-    75% {
-        box-shadow: 0 0 5px #66ccff, 0 0 10px #66ccff, 0 0 20px #66ccff;
+        box-shadow: 0 0 5px blueviolet, 0 0 10px blueviolet, 0 0 20px blueviolet;
     }
     100% {
-        box-shadow: 0 0 5px #ff66cc, 0 0 10px #ff66cc, 0 0 20px #ff66cc;
+        box-shadow: 0 0 5px cyan, 0 0 10px cyan, 0 0 20px cyan;
     }
 }
 
@@ -114,11 +106,9 @@ main {
 }
 /* Definimos la animación de colores */
 @keyframes colorChange {
-    0% { background-color: #ff6666; }
-    25% { background-color: #ffcc66; }
-    50% { background-color: #66ff66; }
-    75% { background-color: #66ccff; }
-    100% { background-color: #ff66cc; }
+    0% { background-color: cyan; }
+    50% { background-color: blueviolet; }
+    100% { background-color: cyan; }
 }
 
 /* Aplicamos la animación al botón */
@@ -145,8 +135,9 @@ button {
 }
 
 button:hover {
-    background-color: #00ffdd; /* Color al pasar el cursor sobre el botón */
+    transform: scale(1.15); /* Pequeño efecto de compresión al hacer clic */
 }
+
 
 #hint {
     margin-top: 1em;
