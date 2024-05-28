@@ -65,7 +65,7 @@ main {
     flex: 1;
     padding: 1em;
     background-color: #fff;
-    background-image: url('Img/Fondo 3.png'); /* Ruta a tu imagen de fondo */
+    background-image: url('Img/Fondo3.png'); /* Ruta a tu imagen de fondo */
     background-size: cover;
     background-position: center;
     display: flex;
