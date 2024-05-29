@@ -12,15 +12,15 @@ document.addEventListener('DOMContentLoaded', function() {
     playButton.addEventListener('click', function() {
         if (backgroundMusic.paused || backgroundMusic.ended) {
             backgroundMusic.play();
-            playButton.textContent = 'Pause Music';
+            playButton.textContent = 'Pausar';
         } else {
             backgroundMusic.pause();
-            playButton.textContent = 'Play Music';
+            playButton.textContent = 'Continuar';
         }
     });
 
     backgroundMusic.addEventListener('ended', function() {
-        playButton.textContent = 'Play Music';
+        playButton.textContent = 'Reproducir';
     });
 
     input.addEventListener('input', function() {
