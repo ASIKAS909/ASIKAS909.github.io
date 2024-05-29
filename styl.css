@@ -23,17 +23,17 @@ body {
 .text {
     margin: 20px;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Sombra del texto para mejor legibilidad */
+    white-space: nowrap; /* Evita que las palabras se dividan */
 }
 
-.center-image, .center-gif {
-    margin: 5px 0;
-    max-width: 20%;
+.center-image {
+    margin: 20px 0;
+    max-width: 100%;
     height: auto;
 }
-
 .center-gif {
-    margin: 5px 0;
-    max-width: 50%;
+    margin: 20px 0;
+    max-width: 100%;
     height: auto;
 }
 
@@ -67,7 +67,7 @@ button#start {
 }
 
 @keyframes colorChange {
-    0% { background-color: skyblue; }
+    0% { background-color: blue; }
     100% { background-color: purple; }
 }
 
@@ -85,6 +85,7 @@ button:hover {
     display: inline-block;
     opacity: 0;
     animation: fadeIn 0.5s forwards;
+    white-space: nowrap; /* Evita que las letras de una palabra se dividan */
 }
 
 .hidden {
