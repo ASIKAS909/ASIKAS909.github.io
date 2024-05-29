@@ -8,19 +8,19 @@ document.addEventListener('DOMContentLoaded', () => {
     function splitText(element) {
         const paragraphs = element.querySelectorAll('h1');
         paragraphs.forEach(paragraph => {
-            const text = paragraph.textContent.trim();
+            const words = paragraph.textContent.trim().split(' ');
             paragraph.innerHTML = '';
-            text.split('').forEach((char, index) => {
-                if (char === ' ') {
-                    paragraph.innerHTML += '<span>&nbsp;</span>';
-                } else {
-                    paragraph.innerHTML += `<span>${char}</span>`;
+            words.forEach((word, index) => {
+                const span = document.createElement('span');
+                span.textContent = word;
+                paragraph.appendChild(span);
+                if (index < words.length - 1) {
+                    paragraph.appendChild(document.createTextNode(' '));
                 }
-                const span = paragraph.querySelectorAll('span')[index];
-                span.style.animationDelay = `${index * 0.1}s`;
             });
         });
     }
+    
 
     texts.forEach(text => {
         splitText(text);
@@ -57,7 +57,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     startButton.addEventListener('click', () => {
-        window.location.href = 'Pag2/pag2.html'; // Reemplaza 'otro.html' con la URL del archivo HTML de destino
+        window.location.href = 'Pag2/pag.html'; // Reemplaza 'otro.html' con la URL del archivo HTML de destino
     });
 
     showText(currentIndex);

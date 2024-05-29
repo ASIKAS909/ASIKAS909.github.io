@@ -12,28 +12,26 @@ body {
     justify-content: center;
     align-items: center;
     text-align: center;
+    overflow: hidden; /* Asegura que no haya scroll no deseado */
 }
 
 .content {
     display: flex;
     flex-direction: column;
     align-items: center;
+    max-width: 90%; /* Limita el ancho máximo del contenido */
 }
 
 .text {
     margin: 20px;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Sombra del texto para mejor legibilidad */
-    white-space: nowrap; /* Evita que las palabras se dividan */
+    white-space: normal; /* Permite que las palabras se envuelvan */
+    overflow-wrap: break-word; /* Permite que las palabras largas se dividan adecuadamente */
 }
 
-.center-image {
-    margin: 20px 0;
-    max-width: 100%;
-    height: auto;
-}
-.center-gif {
-    margin: 20px 0;
-    max-width: 100%;
+.center-image, .center-gif {
+    margin: 1px 0;
+    max-width: 30%;
     height: auto;
 }
 
@@ -85,7 +83,6 @@ button:hover {
     display: inline-block;
     opacity: 0;
     animation: fadeIn 0.5s forwards;
-    white-space: nowrap; /* Evita que las letras de una palabra se dividan */
 }
 
 .hidden {
