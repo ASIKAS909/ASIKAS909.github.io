@@ -1,31 +1,34 @@
-document.getElementById('guessInput').addEventListener('input', function(event) {
-    this.value = this.value.replace(/[^\d]/, ''); // Elimina cualquier carácter no numérico
-});
+
 document.addEventListener('DOMContentLoaded', function() {
     const targetNumber = '123456789'; // El número telefónico a adivinar
     const form = document.getElementById('guessForm');
     const input = document.getElementById('guessInput');
     const hint = document.getElementById('hint');
     const playButton = document.getElementById('playButton');
-    let backgroundMusic = document.getElementById('backgroundMusic');
+    const backgroundMusic = document.getElementById('backgroundMusic');
+    const successVideo = document.getElementById('successVideo');
+    const backButton = document.getElementById('backButton'); // Obtenemos el botón "REGRESAR"
 
-    // Función para reproducir la música
-    function playMusic() {
+    playButton.addEventListener('click', function() {
         if (backgroundMusic.paused || backgroundMusic.ended) {
             backgroundMusic.play();
-            playButton.textContent = 'Pausar';
+            playButton.textContent = 'Pause Music';
         } else {
             backgroundMusic.pause();
-            playButton.textContent = 'Continuar';
+            playButton.textContent = 'Play Music';
         }
-    }
+    });
 
-    // Evento para reproducir o pausar la música cuando se hace clic en el botón
-    playButton.addEventListener('click', playMusic);
-
-    // Evento para reiniciar la música cuando termina
     backgroundMusic.addEventListener('ended', function() {
-        playButton.textContent = 'Escuchar';
+        playButton.textContent = 'Play Music';
+    });
+
+    input.addEventListener('input', function() {
+        if (this.value.length > 0) {
+            this.classList.add('has-content');
+        } else {
+            this.classList.remove('has-content');
+        }
     });
 
     form.addEventListener('submit', function(event) {
@@ -42,18 +45,20 @@ document.addEventListener('DOMContentLoaded', function() {
         for (let i = 0; i < 9; i++) {
             if (guess[i] === targetNumber[i]) {
                 correctPositions++;
-                hintHtml += `<img class="icon" src="Img/Bien.png" alt="Correcto"></span> <span class="correct">${guess[i]}`;
-            }
-        else {
-                hintHtml += `<img class="icon" src="Img/Mal.png" alt="Incorrecto"></span> <span class="incorrect">${guess[i]}`;
+                hintHtml += `<span class="correct">${guess[i]} <img class="icon" src="images/check-green.png" alt="Correcto"></span>`;
+            } else if (targetNumber.includes(guess[i])) {
+                hintHtml += `<span class="present">${guess[i]} <img class="icon" src="images/check-orange.png" alt="Presente en otra posición"></span>`;
+            } else {
+                hintHtml += `<span class="incorrect">${guess[i]} <img class="icon" src="images/x-red.png" alt="Incorrecto"></span>`;
             }
         }
 
         if (correctPositions === 9) {
-            hint.innerHTML = '¡Felicidades! Obtuviste su número.';
+            hint.innerHTML = '¡Felicidades! Adivinaste el número correctamente.';
             successGif.style.display = 'block';
         } else {
-            hint.innerHTML = `Oh! Algunos números no son correctos D:<br>${hintHtml}`;
+            hint.innerHTML = `Tienes ${correctPositions} dígitos en la posición correcta:<br>${hintHtml}`;
+            successVideo.style.display = 'none';
         }
     });
 });

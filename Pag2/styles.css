@@ -155,3 +155,37 @@ button:hover {
 #successVideo {
     margin-top: 1em;
 }
+/* Definimos la animación de colores */
+@keyframes colorChange {
+    0% { background-color: cyan; }
+    50% { background-color: blueviolet; }
+    100% { background-color: cyan; }
+}
+
+/* Aplicamos la animación al botón "Comprobar" */
+#checkButton {
+    padding: 0.5em 1em;
+    font-size: 1em;
+    cursor: pointer;
+    border: none;
+    border-radius: 20px;
+    animation: colorChange 5s infinite;
+    transition: transform 0.2s;
+}
+
+/* Aplicamos la misma animación al botón "REGRESAR" */
+#backButton {
+    padding: 0.5em 1em;
+    font-size: 1em;
+    cursor: pointer;
+    border: none;
+    border-radius: 20px;
+    animation: colorChange 5s infinite;
+    transition: transform 0.2s;
+    margin-top: 1em; /* Añadimos margen para separar los botones */
+}
+
+/* Efecto de clic */
+#checkButton:active, #backButton:active {
+    transform: scale(0.95);
+}
