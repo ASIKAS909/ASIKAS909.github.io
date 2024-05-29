@@ -57,7 +57,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     startButton.addEventListener('click', () => {
-        window.location.href = 'Pag2/pag.html'; // Reemplaza 'otro.html' con la URL del archivo HTML de destino
+        window.location.href = 'Pag2/pag2.html'; // Reemplaza 'otro.html' con la URL del archivo HTML de destino
     });
 
     showText(currentIndex);
