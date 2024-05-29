@@ -45,11 +45,10 @@ document.addEventListener('DOMContentLoaded', function() {
         for (let i = 0; i < 9; i++) {
             if (guess[i] === targetNumber[i]) {
                 correctPositions++;
-                hintHtml += `<span class="correct">${guess[i]} <img class="icon" src="images/check-green.png" alt="Correcto"></span>`;
-            } else if (targetNumber.includes(guess[i])) {
-                hintHtml += `<span class="present">${guess[i]} <img class="icon" src="images/check-orange.png" alt="Presente en otra posición"></span>`;
-            } else {
-                hintHtml += `<span class="incorrect">${guess[i]} <img class="icon" src="images/x-red.png" alt="Incorrecto"></span>`;
+                hintHtml += `<span class="correct"><img class="icon" src="Img/Bien.png" alt="Correcto"> ${guess[i]}</span>`;
+            }
+            else {
+                hintHtml += `<span class="incorrect"><img class="icon" src="Img/Mal.png" alt="Incorrecto"> ${guess[i]}</span>`;
             }
         }
 
