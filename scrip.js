@@ -6,21 +6,24 @@ document.addEventListener('DOMContentLoaded', () => {
     let currentIndex = 0;
 
     function splitText(element) {
-        const text = element.textContent.trim();
-        element.innerHTML = '';
-        text.split('').forEach((char, index) => {
-            if (char === ' ') {
-                element.innerHTML += '<span>&nbsp;</span>';
-            } else {
-                element.innerHTML += `<span>${char}</span>`;
-            }
-            const span = element.querySelectorAll('span')[index];
-            span.style.animationDelay = `${index * 0.1}s`;
+        const paragraphs = element.querySelectorAll('h1');
+        paragraphs.forEach(paragraph => {
+            const text = paragraph.textContent.trim();
+            paragraph.innerHTML = '';
+            text.split('').forEach((char, index) => {
+                if (char === ' ') {
+                    paragraph.innerHTML += '<span>&nbsp;</span>';
+                } else {
+                    paragraph.innerHTML += `<span>${char}</span>`;
+                }
+                const span = paragraph.querySelectorAll('span')[index];
+                span.style.animationDelay = `${index * 0.1}s`;
+            });
         });
     }
 
     texts.forEach(text => {
-        splitText(text.querySelector('h1'));
+        splitText(text);
     });
 
     function showText(index) {
