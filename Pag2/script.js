@@ -1,6 +1,6 @@
 
 document.addEventListener('DOMContentLoaded', function() {
-    const targetNumber = '123456789'; // El número telefónico a adivinar
+    const targetNumber = '910902398'; // El número telefónico a adivinar
     const form = document.getElementById('guessForm');
     const input = document.getElementById('guessInput');
     const hint = document.getElementById('hint');
