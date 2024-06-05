@@ -7,7 +7,7 @@ body {
     background-repeat: no-repeat;
     height: 100vh;
     font-family: Arial, sans-serif;
-    color: white;
+    color: skyblue;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -23,8 +23,9 @@ body {
 }
 
 .text {
+    color: blueviolet;
     margin: 20px;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Sombra del texto para mejor legibilidad */
+    text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.7); /* Sombra del texto para mejor legibilidad */
     white-space: normal; /* Permite que las palabras se envuelvan */
     overflow-wrap: break-word; /* Permite que las palabras largas se dividan adecuadamente */
 }
